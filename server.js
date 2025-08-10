@@ -15,6 +15,9 @@ app.use(express.static(__dirname));
 
 // Dify APIを呼び出すためのAPIエンドポイント
 app.post('/api/check', async (req, res) => {
+    // For debugging: Log the value of the environment variable as seen by the app
+    console.log('DIFY_API_KEY from env:', process.env.DIFY_API_KEY);
+
     console.log('Backend API /api/check called with:', req.body);
 
     const { drug_name, ope_day } = req.body;
